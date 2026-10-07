@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>오늘 뭐 먹지?</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+        }
+
+        .school-name {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+
+            font-size: 13px;
+            color: #888;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+
+            background: white;
+
+            padding: 50px 40px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .emoji {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 42px;
+            color: #222;
+        }
+
+        .description {
+            margin-top: 15px;
+            margin-bottom: 35px;
+
+            font-size: 17px;
+            color: #777;
+        }
+
+        button {
+            width: 100%;
+
+            margin-top: 10px;
+
+            padding: 17px;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            color: white;
+
+            background: #ff7043;
+
+            border: none;
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+
+            box-shadow: 0 8px 20px rgba(255, 112, 67, 0.3);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #result {
+            min-height: 70px;
+
+            margin-top: 35px;
+            margin-bottom: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 32px;
+
+            color: #ff5722;
+        }
+
+        .result-label {
+            margin-top: 30px;
+
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="school-name">
+        울산대학교 임시헌
+    </div>
+
+
+    <div class="container">
+
+        <div class="emoji">🍽️</div>
+
+        <h1>오늘 뭐 먹지?</h1>
+
+        <p class="description">
+            고민될 때는 제가 골라드릴게요!
+        </p>
+
+
+        <button onclick="recommendFood()">
+            🎲 메뉴 추천받기
+        </button>
+
+
+        <p class="result-label">
+            오늘의 추천 메뉴
+        </p>
+
+        <h2 id="result">
+            메뉴를 골라볼까요?
+        </h2>
+
+    </div>
+
+
+    <script>
+
+        function recommendFood() {
+
+            const foods = [
+                "안창깍두기",
+                "맥도날드",
+                "KFC",
+                "짬뽕상회",
+                "틈새라면",
+                "임사부",
+                "백반",
+                "중국집",
+                "돈까스",
+                "봉밥",
+                "편의점"
+            ];
+
+
+            const randomIndex =
+                Math.floor(Math.random() * foods.length);
+
+
+            const selectedFood =
+                foods[randomIndex];
+
+
+            document.getElementById("result").textContent =
+                selectedFood;
+
+        }
+
+    </script>
+
+</body>
+</html>
